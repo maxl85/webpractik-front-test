@@ -1,0 +1,4 @@
+npx create-next-app@latest
+npm i sass -D
+npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
+npm i normalize.css
