@@ -1,14 +1,87 @@
 @import 'variables';
 
 .header {
-  
+  margin: 46px 0;
+  // padding: 46px 0;
+  position: sticky;
+  top: 0;
+  /* required */
+  background: #fff;
+  // z-index: 10;
+
+  @media screen and (max-width: $bp-lg) {
+    margin-top: 32px;
+    margin-bottom: 41px;
+  }
+
+  @media screen and (max-width: $bp-md ) {
+    margin-top: 12px;
+    margin-bottom: 21px;
+  }
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  
 }
 
+.logo {
+  width: 182px;
+  height: 84px;
+  position: relative;
+  // transition: 0.2s ease-in-out;
+
+  @media screen and (max-width: $bp-xl) {
+    width: 130px;
+    height: 60px;
+  }
+
+  @media screen and (max-width: $bp-md) {
+    width: 85px;
+    height: 39px;
+  }
+}
+
+.nav {
+  &>ul {
+    display: flex;
+
+    &>li {
+      margin: 0 30px;
+
+      &>a {
+        color: #000;
+        font-size: 18px;
+        font-family: $font-alegreya;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+
+    &>span {
+      color: #848A9A;
+    }
+  }
+}
+
+.telephoneIcon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}

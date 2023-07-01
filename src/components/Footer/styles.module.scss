@@ -38,6 +38,9 @@
 
   &>a {
     margin-bottom: 6px;
+    &>h4 {
+      color: #fff;
+    }
   }
 
   &>span {
@@ -45,7 +48,6 @@
 
     @media screen and (max-width: $bp-md) {
       text-align: center;
-
     }
   }
 
