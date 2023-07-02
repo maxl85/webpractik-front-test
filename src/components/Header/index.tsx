@@ -5,8 +5,8 @@ import Image from "next/image";
 import { clsx } from 'clsx';
 import { useInView } from 'react-intersection-observer';
 
-
 import styles from './styles.module.scss';
+import HeaderBurger from "../HeaderBurger";
 
 export default function Header() {
   const { ref, inView, entry } = useInView({
@@ -53,6 +53,16 @@ export default function Header() {
         </a>
 
         <button className={styles.language}>EN</button>
+
+        {/* <button className={styles.burger}>
+          <div className={styles.burgerIcon}>
+            <div className={styles.burgerLine}></div>
+            <div className={styles.burgerLine}></div>
+            <div className={styles.burgerLine}></div>
+          </div>
+        </button> */}
+        
+        <HeaderBurger />
 
       </div>
     </header>
