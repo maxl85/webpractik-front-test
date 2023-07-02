@@ -12,9 +12,9 @@ export default function Footer() {
         </Link>
         <div className={styles.phone}>
           <a href="tel:+79184326587"><h4>+7 (918) 432-65-87</h4></a>
-          <span className="description">Ежедневно с 9:00 до 23:00</span>
+          <span>Ежедневно с 9:00 до 23:00</span>
         </div>
-        <Link href="/" className={`description ${styles.confidencial}`}>Политика конфиденциальности</Link>
+        <Link href="/" className={styles.confidencial}>Политика конфиденциальности</Link>
       </div>
     </footer>
   );

@@ -2,12 +2,9 @@
 
 .header {
   margin: 46px 0;
-  // padding: 46px 0;
   position: sticky;
-  top: 0;
-  /* required */
+  top: -1px;
   background: #fff;
-  // z-index: 10;
 
   @media screen and (max-width: $bp-lg) {
     margin-top: 32px;
@@ -30,7 +27,7 @@
   width: 182px;
   height: 84px;
   position: relative;
-  // transition: 0.2s ease-in-out;
+  transition: $transition;
 
   @media screen and (max-width: $bp-xl) {
     width: 130px;
@@ -44,44 +41,175 @@
 }
 
 .nav {
-  &>ul {
+  transition: $transition;
+
+  &List {
     display: flex;
-
-    &>li {
-      margin: 0 30px;
-
-      &>a {
-        color: #000;
-        font-size: 18px;
-        font-family: $font-alegreya;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-    }
   }
 
+  &Item {
+    margin: 0 30px;
+  }
+
+  &Link {
+    color: #000;
+    font-size: 18px;
+    font-family: $font-alegreya;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: $transition;
+  }
 }
 
 .phone {
   display: flex;
   align-items: center;
 
+  &WrapImage {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 12px;
+    transition: $transition;
+  }
+
   &Text {
     display: flex;
     flex-direction: column;
-    margin-left: 12px;
+
+    &>h4 {
+      transition: $transition;
+    }
 
     &>span {
       color: #848A9A;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
     }
   }
 }
 
-.telephoneIcon {
-  width: 40px;
-  height: 40px;
-  position: relative;
+.cart {
+  display: flex;
+  align-items: flex-end;
+
+  &WrapImage {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transition: $transition;
+  }
+
+  &Icon {
+    position: relative;
+    margin-right: 12px;
+
+    &>span {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      background: #e52d2d;
+      color: #fff;
+      text-align: center;
+      font-size: 11px;
+      font-family: $font-roboto;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      border-radius: 50%
+    }
+  }
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+
+    &>h4 {
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: $transition;
+    }
+
+    &>span {
+      color: #848A9A;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+}
+
+.language {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #eff0f1;
+  border: none;
+  cursor: pointer;
+
+  color: #000;
+  text-align: center;
+  font-size: 18px;
+  font-family: $font-alegreya;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+.isScroll {
+  &.header {
+    padding: 9px 0;
+    box-shadow: 0px 2px 5px 0px rgba(165, 169, 176, 0.30);
+  }
+
+  .logo {
+    width: 68px;
+    height: 31px;
+  }
+
+  .nav {
+    &Link {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.889px;
+    }
+  }
+
+
+  .phoneWrapImage,
+  .cartWrapImage {
+    width: 32px;
+    height: 32px;
+  }
+
+  .phoneText>h4 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.286px;
+  }
+
+  .cart {
+    margin-right: 100px;
+
+    &Text>h4 {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  .language {
+    display: none;
+  }
+
 }
