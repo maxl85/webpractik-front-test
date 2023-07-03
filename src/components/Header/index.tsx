@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { clsx } from 'clsx';
@@ -9,9 +10,10 @@ import styles from './styles.module.scss';
 import HeaderBurger from "../HeaderBurger";
 
 export default function Header() {
-  const { ref, inView, entry } = useInView({
-    threshold: 1,
-  });
+  const { ref, inView } = useInView({ threshold: 1 });
+  const [openMenu, setOpenMenu] = useState(false);
+
+
 
   return (
     <header className={clsx(styles.header, !inView && styles.isScroll)} ref={ref}>
@@ -54,15 +56,7 @@ export default function Header() {
 
         <button className={styles.language}>EN</button>
 
-        {/* <button className={styles.burger}>
-          <div className={styles.burgerIcon}>
-            <div className={styles.burgerLine}></div>
-            <div className={styles.burgerLine}></div>
-            <div className={styles.burgerLine}></div>
-          </div>
-        </button> */}
-        
-        <HeaderBurger />
+        <HeaderBurger onClick={() => setOpenMenu(!openMenu)} openMenu={openMenu} />
 
       </div>
     </header>

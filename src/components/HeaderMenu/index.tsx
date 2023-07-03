@@ -8,7 +8,7 @@ interface Props {
   openMenu: boolean;
 }
 
-export default function HeaderBurger({ onClick, openMenu }: Props) {
+export default function HeaderMenu({ onClick, openMenu }: Props) {
   return (
     <button className={clsx(styles.burger, openMenu && styles.openMenu)} onClick={onClick}>
       <div className={styles.burgerIcon}>

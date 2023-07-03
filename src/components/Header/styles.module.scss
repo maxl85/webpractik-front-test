@@ -11,7 +11,7 @@
     margin-bottom: 41px;
   }
 
-  @media screen and (max-width: $bp-md ) {
+  @media screen and (max-width: $bp-sm ) {
     margin-top: 12px;
     margin-bottom: 21px;
   }
@@ -34,7 +34,7 @@
     height: 60px;
   }
 
-  @media screen and (max-width: $bp-md) {
+  @media screen and (max-width: $bp-sm) {
     width: 85px;
     height: 39px;
   }
@@ -90,6 +90,11 @@
     @media screen and (max-width: $bp-lg) {
       margin-right: 0;
     }
+    
+    @media screen and (max-width: $bp-sm) {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &Text {
@@ -131,6 +136,11 @@
     height: 40px;
     position: relative;
     transition: $transition;
+
+    @media screen and (max-width: $bp-sm) {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &Icon {
@@ -189,6 +199,10 @@
   @media screen and (max-width: $bp-lg) {
     margin-left: 32px;
   }
+  
+  @media screen and (max-width: $bp-sm) {
+    margin-left: 24px;
+  }
 }
 
 .language {
@@ -213,55 +227,11 @@
   @media screen and (max-width: $bp-lg) {
     margin-left: 70px;
   }
+
+  @media screen and (max-width: $bp-sm) {
+    display: none;
+  }
 }
-
-// .burger {
-//   width: 40px;
-//   height: 40px;
-//   padding: 10px 8px;
-//   margin-left: 32px;
-//   cursor: pointer;
-//   border: none;
-//   background: transparent;
-//   // display: none
-//   // position: relative;
-  
-//   &Icon {
-//     // width: 100%;
-//     height: 100%;
-//     position: relative;
-//     // display: block;
-//   }
-
-//   &Line {
-//     width: 24px;
-//     height: 3px;
-//     background: #000;
-//     border-radius: 1.5px;
-//     position: absolute;
-//     left: 0;
-//     top: 0%;
-//     transition: $transition;
-
-//     &:nth-of-type(1) {
-//       // transform-origin: 3px 5px;
-//     }
-
-//     &:nth-of-type(2) {
-//       top: 50%;
-//       transform: translateY(-50%);
-//       // height: 3px;
-//     }
-
-//     &:nth-of-type(3) {
-//       top: auto;
-//       bottom: 0;
-//       width: 19px;
-//       // transform-origin: 2px -3px;
-//     }
-//   }
-
-// }
 
 
 .isScroll {
