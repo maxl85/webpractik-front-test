@@ -24,14 +24,6 @@ export default function Header() {
           <Image src="/assets/icons/logo.svg" fill={true} alt="logo" />
         </Link>
 
-        {/* <nav className={styles.nav}>
-          <ul className={styles.navList}>
-            <li className={styles.navItem}><Link href="#" className={styles.navLink}>меню</Link></li>
-            <li className={styles.navItem}><Link href="#" className={styles.navLink}>о нас</Link></li>
-            <li className={styles.navItem}><Link href="#" className={styles.navLink}>контакты</Link></li>
-          </ul>
-        </nav> */}
-
         <HeaderMenu menuToggle={menuToggle} />
 
         <a href="tel:+79184326587" className={styles.phone}>

@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.wrapper}`}>
         <Link href="/" className={styles.logo}>
-          <Image src="/assets/icons/logo-invert.svg" fill={true} alt="logo" />
+          <Image src="/assets/icons/logo-invert.svg" fill={true} alt="logo2" />
         </Link>
         <div className={styles.phone}>
           <a href="tel:+79184326587"><h4>+7 (918) 432-65-87</h4></a>
