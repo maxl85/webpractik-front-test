@@ -1,22 +1,39 @@
 'use client';
 
+import Link from "next/link";
+import Image from "next/image";
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 
 interface Props {
-  onClick?: React.MouseEventHandler;
   openMenu: boolean;
 }
 
-export default function HeaderMenu({ onClick, openMenu }: Props) {
+// const navList = [
+//   {
+//     title: 'меню',
+//     link: '#',
+//   },
+//   {
+//     text: 'о нас',
+//     link: '#'
+//   },
+//   {
+//     text: 'контакты',
+//     link: '#'
+//   }
+// ];
+
+export default function HeaderMenu({ openMenu }: Props) {
   return (
-    <button className={clsx(styles.burger, openMenu && styles.openMenu)} onClick={onClick}>
-      <div className={styles.burgerIcon}>
-        <div className={styles.burgerLine}></div>
-        <div className={styles.burgerLine}></div>
-        <div className={styles.burgerLine}></div>
-      </div>
-    </button>
+    <nav className={clsx(styles.nav, openMenu && styles.openMenu)}>
+      <ul className={styles.navList}>
+        <li className={styles.navItem}><Link href="#" className={styles.navLink}>меню</Link></li>
+        <li className={styles.navItem}><Link href="#" className={styles.navLink}>о нас</Link></li>
+        <li className={styles.navItem}><Link href="#" className={styles.navLink}>контакты</Link></li>
+      </ul>
+      
+    </nav>
   );
 }
 

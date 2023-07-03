@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 
 import styles from './styles.module.scss';
 import HeaderBurger from "../HeaderBurger";
+import HeaderMenu from "../HeaderMenu";
 
 export default function Header() {
   const { ref, inView } = useInView({ threshold: 1 });
@@ -23,13 +24,15 @@ export default function Header() {
           <Image src="/assets/icons/logo.svg" fill={true} alt="logo" />
         </Link>
 
-        <nav className={styles.nav}>
+        {/* <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}><Link href="#" className={styles.navLink}>меню</Link></li>
             <li className={styles.navItem}><Link href="#" className={styles.navLink}>о нас</Link></li>
             <li className={styles.navItem}><Link href="#" className={styles.navLink}>контакты</Link></li>
           </ul>
-        </nav>
+        </nav> */}
+
+        <HeaderMenu openMenu={openMenu} />
 
         <a href="tel:+79184326587" className={styles.phone}>
           <div className={styles.phoneWrapImage}>
@@ -54,7 +57,7 @@ export default function Header() {
           </div>
         </a>
 
-        <button className={styles.language}>EN</button>
+        <Link href="#" className={styles.language}><span>EN</span></Link>
 
         <HeaderBurger onClick={() => setOpenMenu(!openMenu)} openMenu={openMenu} />
 

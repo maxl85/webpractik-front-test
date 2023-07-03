@@ -40,41 +40,41 @@
   }
 }
 
-.nav {
-  transition: $transition;
+// .nav {
+//   transition: $transition;
 
-  &List {
-    display: flex;
-  }
+//   &List {
+//     display: flex;
+//   }
 
-  &Item {
-    margin: 0 30px;
+//   &Item {
+//     margin: 0 30px;
 
-    @media screen and (max-width: $bp-xl) {
-      margin: 0 10px;
-    }
-  }
+//     @media screen and (max-width: $bp-xl) {
+//       margin: 0 10px;
+//     }
+//   }
 
-  &Link {
-    color: #000;
-    font-size: 18px;
-    font-family: $font-alegreya;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: $transition;
+//   &Link {
+//     color: #000;
+//     font-size: 18px;
+//     font-family: $font-alegreya;
+//     font-style: normal;
+//     font-weight: 900;
+//     line-height: normal;
+//     letter-spacing: 1px;
+//     text-transform: uppercase;
+//     transition: $transition;
 
-    @media screen and (max-width: $bp-xl) {
-      font-size: 16px;
-    }
-  }
+//     @media screen and (max-width: $bp-xl) {
+//       font-size: 16px;
+//     }
+//   }
 
-  @media screen and (max-width: $bp-lg) {
-    display: none;
-  }
-}
+//   @media screen and (max-width: $bp-lg) {
+//     display: none;
+//   }
+// }
 
 .phone {
   display: flex;
@@ -90,7 +90,7 @@
     @media screen and (max-width: $bp-lg) {
       margin-right: 0;
     }
-    
+
     @media screen and (max-width: $bp-sm) {
       width: 32px;
       height: 32px;
@@ -103,6 +103,10 @@
 
     &>h4 {
       transition: $transition;
+      
+      &:hover{
+        color: #e52d2d;
+      }
 
       @media screen and (max-width: $bp-xl) {
         font-size: 20px;
@@ -177,6 +181,10 @@
       font-size: 18px;
       text-transform: uppercase;
       transition: $transition;
+      
+      &:hover{
+        color: #e52d2d;
+      }
 
       @media screen and (max-width: $bp-xl) {
         font-size: 16px;
@@ -199,7 +207,7 @@
   @media screen and (max-width: $bp-lg) {
     margin-left: 32px;
   }
-  
+
   @media screen and (max-width: $bp-sm) {
     margin-left: 24px;
   }
@@ -210,11 +218,8 @@
   height: 48px;
   border-radius: 50%;
   background-color: #eff0f1;
-  border: none;
-  cursor: pointer;
 
   color: #000;
-  text-align: center;
   font-size: 18px;
   font-family: $font-alegreya;
   font-style: normal;
@@ -223,6 +228,18 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: $transition;
+  
+  &:hover{
+    color: #e52d2d;
+  }
+
+  &>span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media screen and (max-width: $bp-lg) {
     margin-left: 70px;
