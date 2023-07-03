@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import styles from './styles.module.scss';
 
 interface Props {
-  openMenu: boolean;
+  menuToggle: boolean;
 }
 
 // const navList = [
@@ -24,9 +24,9 @@ interface Props {
 //   }
 // ];
 
-export default function HeaderMenu({ openMenu }: Props) {
+export default function HeaderMenu({ menuToggle }: Props) {
   return (
-    <nav className={clsx(styles.nav, openMenu && styles.openMenu)}>
+    <nav className={clsx(styles.nav, menuToggle && styles.menuToggle)}>
       <ul className={styles.navList}>
         <li className={styles.navItem}><Link href="#" className={styles.navLink}>меню</Link></li>
         <li className={styles.navItem}><Link href="#" className={styles.navLink}>о нас</Link></li>

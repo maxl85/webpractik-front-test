@@ -5,12 +5,12 @@ import styles from './styles.module.scss';
 
 interface Props {
   onClick?: React.MouseEventHandler;
-  openMenu: boolean;
+  menuToggle: boolean;
 }
 
-export default function HeaderBurger({ onClick, openMenu }: Props) {
+export default function HeaderBurger({ onClick, menuToggle }: Props) {
   return (
-    <button className={clsx(styles.burger, openMenu && styles.openMenu)} onClick={onClick}>
+    <button className={clsx(styles.burger, menuToggle && styles.menuToggle)} onClick={onClick}>
       <div className={styles.burgerIcon}>
         <div className={styles.burgerLine}></div>
         <div className={styles.burgerLine}></div>

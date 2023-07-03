@@ -12,7 +12,7 @@ import HeaderMenu from "../HeaderMenu";
 
 export default function Header() {
   const { ref, inView } = useInView({ threshold: 1 });
-  const [openMenu, setOpenMenu] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false);
 
 
 
@@ -32,7 +32,7 @@ export default function Header() {
           </ul>
         </nav> */}
 
-        <HeaderMenu openMenu={openMenu} />
+        <HeaderMenu menuToggle={menuToggle} />
 
         <a href="tel:+79184326587" className={styles.phone}>
           <div className={styles.phoneWrapImage}>
@@ -59,7 +59,7 @@ export default function Header() {
 
         <Link href="#" className={styles.language}><span>EN</span></Link>
 
-        <HeaderBurger onClick={() => setOpenMenu(!openMenu)} openMenu={openMenu} />
+        <HeaderBurger onClick={() => setMenuToggle(!menuToggle)} menuToggle={menuToggle} />
 
       </div>
     </header>

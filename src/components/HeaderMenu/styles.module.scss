@@ -1,8 +1,6 @@
 @import 'variables';
 
 .nav {
-  transition: $transition;
-
   &List {
     display: flex;
 
@@ -68,11 +66,10 @@
     height: 100%;
     padding: 120px 60px 40px;
     background: #313945;
-    // right: 0px;
     transition: $transition;
     z-index: 9;
 
-    &.openMenu {
+    &.menuToggle {
       right: 0px;
     }
   }
