@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
     {/* <main className='container'> */}
-      {/* <Cover /> */}
+      <Cover />
       <div style={{height: '2500px'}}></div>
     {/* </main> */}
     </>
