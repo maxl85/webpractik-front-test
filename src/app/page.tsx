@@ -4,8 +4,11 @@ import styles from './page.module.scss';
 
 export default function Home() {
   return (
-    // <main className='container'>
+    <>
+    {/* <main className='container'> */}
       <Cover />
-    // </main>
+      <div style={{height: '2500px'}}></div>
+    {/* </main> */}
+    </>
   );
 }

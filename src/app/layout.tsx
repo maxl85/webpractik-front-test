@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${alegreya.variable} ${roboto.variable}`}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+          <Header />
+          {children}
+          <Footer />
       </body>
     </html>
   );
