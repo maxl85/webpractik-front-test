@@ -1,0 +1,59 @@
+@import 'variables';
+@import 'mixins';
+
+.cover {
+  display: flex;
+  margin-bottom: 94px;
+
+  &Left {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+
+    &Title {
+      @include h1-desktop;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-bottom: 12px;
+    }
+
+    &Text {
+      @include accent-desktop;
+      margin-bottom: 32px;
+    }
+
+    &Btn {
+      width: 304px;
+      height: 60px;
+      border-radius: 5px;
+      background: #E52D2D;
+      cursor: pointer;
+      border: none;
+      transition: $transition;
+      outline: none;
+
+      color: #FFF;
+      font-size: 18px;
+      font-family: $font-alegreya;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      &:hover {
+        background: #FF3C3C;
+      }
+
+      &:active {
+        background: #BF221E;
+      }
+
+      &:focus-visible {
+        border: 3px solid #8FC9FF;
+        background: #E52D2D;
+        transition: none;
+      }
+
+    }
+  }
+}

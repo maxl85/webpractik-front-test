@@ -1,0 +1,19 @@
+// @import '~normalize.css/normalize.css';
+@import '~modern-normalize/modern-normalize.css';
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+
+.container {
+  max-width: 1312px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $bp-xxl) {
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: $bp-sm) {
+    padding: 0 15px;
+  }
+}

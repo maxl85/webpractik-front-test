@@ -1,0 +1,39 @@
+@import 'variables';
+
+
+@mixin h1-desktop {
+  color: #000;
+  font-size: 72px;
+  font-family: $font-alegreya;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 90px;
+  letter-spacing: 1px;
+}
+
+@mixin h4-desktop {
+  color: #000;
+  font-size: 24px;
+  font-family: $font-alegreya;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 30px;
+}
+
+@mixin accent-desktop {
+  color: #000;
+  font-size: 24px;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+@mixin desc-desktop {
+  color: #848A9A;
+  font-size: 12px;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}

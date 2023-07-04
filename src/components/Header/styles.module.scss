@@ -1,4 +1,6 @@
 @import 'variables';
+@import 'mixins';
+
 
 .header {
   margin: 46px 0;
@@ -74,6 +76,14 @@
     }
 
     &>h4 {
+      color: #000;
+      font-size: 24px;
+      font-family: $font-alegreya;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      letter-spacing: 1.333px;
+      text-transform: uppercase;
       transition: $transition;
 
       &:hover {
@@ -86,11 +96,7 @@
     }
 
     &>span {
-      color: #848A9A;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px;
+      @include desc-desktop;
     }
   }
 }
@@ -154,7 +160,13 @@
     }
 
     &>h4 {
+      color: #000;
       font-size: 18px;
+      font-family: $font-alegreya;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      letter-spacing: 1px;
       text-transform: uppercase;
       transition: $transition;
 
@@ -168,11 +180,7 @@
     }
 
     &>span {
-      color: #848A9A;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px;
+      @include desc-desktop;
     }
   }
 }
