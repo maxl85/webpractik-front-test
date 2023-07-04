@@ -41,6 +41,13 @@
     width: 85px;
     height: 39px;
   }
+  
+  &Hide {
+    
+    @media screen and (max-width: $bp-sm) {
+      opacity: 0;
+    }
+  }
 }
 
 .phone {

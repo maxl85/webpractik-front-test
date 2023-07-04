@@ -20,7 +20,8 @@ export default function Header() {
     <header className={clsx(styles.header, !inView && styles.isScroll)} ref={ref}>
 
       <div className={`container ${styles.wrapper}`}>
-        <Link href="/" className={styles.logo}>
+        {/* <Link href="/" className={styles.logo}> */}
+        <Link href="/" className={clsx(styles.logo, menuToggle && styles.logoHide)}>
           <Image src="/assets/icons/logo.svg" fill={true} alt="logo" />
         </Link>
 
