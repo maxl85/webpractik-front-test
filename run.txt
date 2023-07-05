@@ -4,3 +4,4 @@ npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
 npm i normalize.css
 npm i react-intersection-observer
 npm i clsx
+npm install react-icons --save
