@@ -5,6 +5,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 94px;
+  
+  @media screen and (max-width: $bp-lg) {
+    margin-bottom: 62px;
+  }
 
   @media screen and (max-width: $bp-md) {
     flex-direction: column;
@@ -13,6 +17,7 @@
 
   @media screen and (max-width: $bp-sm) {
     margin-top: 40px;
+    margin-bottom: 60px;
   }
 
   &Left {

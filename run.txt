@@ -5,3 +5,7 @@ npm i normalize.css
 npm i react-intersection-observer
 npm i clsx
 npm install react-icons --save
+
+
+TODO
+Заменить миксины шрифтов на глобальные классы

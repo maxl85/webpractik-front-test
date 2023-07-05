@@ -2,6 +2,12 @@
 @import 'mixins';
 
 .carousel {
+  display: none;
+  
+  @media screen and (max-width: $bp-sm) {
+    display: block;
+  }
+  
   &Slides {
     transition-duration: 500ms;
     background-position: center;
@@ -9,6 +15,7 @@
     aspect-ratio: 288 / 171;
     margin-bottom: 13px;
     position: relative;
+    border-radius: 5px;
   }
 
   &LeftArrow {

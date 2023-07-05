@@ -6,23 +6,8 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
 
-const slides = [
-  {
-    url: '/assets/images/event-1.png',
-    title: 'Закажи 2 пиццы – 3-я в подарок',
-    text: 'При заказе 2-х больших пицц – средняя пицца в подарок',
-  },
-  {
-    url: '/assets/images/event-2.png',
-    title: 'Напиток в подарок',
-    text: 'Скидка на заказ от 3 000 рублей + напиток в подарок',
-  },
-  {
-    url: '/assets/images/event-3.png',
-    title: '25% при первом заказе',
-    text: 'Скидка новым клиентам!',
-  },
-];
+import { slides } from '../../data/slides';
+
 
 export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
