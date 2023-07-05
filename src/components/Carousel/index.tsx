@@ -6,7 +6,7 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
 
-import { slides } from '../../data/slides';
+import { slides } from '../../data/promo';
 
 
 export default function Carousel() {

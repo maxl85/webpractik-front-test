@@ -3,6 +3,7 @@
 
 .carousel {
   display: none;
+  margin-bottom: 60px;
   
   @media screen and (max-width: $bp-sm) {
     display: block;

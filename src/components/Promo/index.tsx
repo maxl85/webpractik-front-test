@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import styles from './styles.module.scss';
 
-import { slides } from '../../data/slides';
+import { slides } from '../../data/promo';
 
 export default function Promo() {
   return (
