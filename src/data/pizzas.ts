@@ -77,11 +77,11 @@ export const pizzas = [
     description: 'Тесто со шпинатом, молодой сыр и колбаски, много колбасок',
     price: 479,
     type: ['all', 'cheese'],
-    image: '/assets/images/pizzas/10.png',
+    image: '/assets/images/pizzas/01.png',
   },
   {
     id: 'pizza11',
-    name: 'Пепперони Фреш с томатами',
+    name: 'Пепперони Фреш',
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
     type: ['all', 'hot'],
@@ -93,6 +93,6 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 699,
     type: ['all', 'cheese', 'meat'],
-    image: '/assets/images/pizzas/01.png',
+    image: '/assets/images/pizzas/12.png',
   },
 ];

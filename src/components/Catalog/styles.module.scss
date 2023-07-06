@@ -5,4 +5,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px 32px;
+  margin-bottom: 100px;
+  
+  @media screen and (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
 }
