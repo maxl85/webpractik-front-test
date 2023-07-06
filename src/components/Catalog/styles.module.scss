@@ -1,0 +1,8 @@
+@import 'variables';
+@import 'mixins';
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 32px;
+}
