@@ -5,18 +5,15 @@
 .delivery {
   background: #F8F6F3;
   padding: 72px 0 80px;
-  margin-bottom: 95px;
 
   @media screen and (max-width: $bp-lg) {
     padding-top: 40px;
     padding-bottom: 60px;
-    margin-bottom: 80px;
   }
 
   @media screen and (max-width: $bp-md) {
     padding-top: 24px;
     padding-bottom: 40px;
-    margin-bottom: 0px;
   }
 
   &Title {

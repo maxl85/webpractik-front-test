@@ -1,3 +1,4 @@
+import About from '@/components/About';
 import Carousel from '@/components/Carousel';
 import Cover from '@/components/Cover';
 import Delivery from '@/components/Delivery';
@@ -13,6 +14,7 @@ export default function Home() {
       <Promo />
       <Carousel />
       <Delivery />
+      <About />
       {/* <div style={{height: '2500px'}}></div> */}
     {/* </main> */}
     </>

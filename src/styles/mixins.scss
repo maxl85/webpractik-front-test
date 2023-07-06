@@ -36,6 +36,15 @@
 
 // ============================================================================
 
+@mixin h3-desktop {
+  color: #000;
+  font-size: 32px;
+  font-family: $font-alegreya;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+}
+
 @mixin h3-mobile {
   color: #000;
   font-size: 20px;
