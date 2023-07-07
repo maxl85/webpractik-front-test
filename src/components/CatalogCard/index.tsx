@@ -39,9 +39,12 @@ export default function CatalogCard(props: Props) {
           <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
         </div>
         <div className={styles.cardImageShadow}></div>
+        
         <div className={styles.cardImagePizza}>
-          <Image src={props.image} sizes="(max-width: 768px) 100vw" fill={true} alt="" />
+          <Image src={props.image} sizes="(max-width: 768px) 100vw" style={{objectFit: 'contain'}} fill={true} alt="" />
         </div>
+        
+        
       </div>
 
       <div className={styles.cardDesc}>
@@ -55,6 +58,7 @@ export default function CatalogCard(props: Props) {
         </div>
         <p className={styles.cardDescPrice}>{`от ${props.price} руб.`}</p>
         <button className={styles.cardDescBuyBtn}>Заказать</button>
+        <button className={styles.cardDescBuyBtnModile}>{`от ${props.price} руб.`}</button>
       </div>
 
     </div>

@@ -9,17 +9,23 @@
   padding: 30px 20px 40px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px 0px rgba(165, 169, 176, 0.30);
-  
+
+  @media screen and (max-width: $bp-sm) {
+    flex-direction: row;
+    // align-items: flex-start;
+    padding: 12px 12px 24px;
+  }
+
   &:hover {
     .cardDescName {
       color: #E52D2D;
     }
-    
+
     .cardType {
       opacity: 1;
     }
   }
-  
+
   &Type {
     display: flex;
     flex-direction: column;
@@ -30,13 +36,26 @@
     height: auto;
     opacity: 0;
     transition: $transition;
-    
-    
-    
-    &Icon{
+
+    @media screen and (max-width: $bp-lg) {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: $bp-sm) {
+      left: 8px;
+      top: 9px;
+      width: 12px;
+    }
+
+    &Icon {
       width: 100%;
       height: auto;
       color: #C5CBD1;
+      margin-bottom: 7px;
+
+      @media screen and (max-width: $bp-sm) {
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -46,37 +65,75 @@
     aspect-ratio: 1 / 1;
     margin-bottom: 15px;
 
+    @media screen and (max-width: $bp-sm) {
+      width: 34%;
+      flex-shrink: 0;
+      margin-right: 13px;
+      margin-bottom: 0;
+      height: fit-content;
+    }
+
     &SizeL {
       position: absolute;
-      width: 75.76%;
-      height: 75.76%;
+      width: 93%;
+      height: 93%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $bp-lg) {
+        width: 93.05%;
+        height: 93.05%;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        width: 92%;
+        height: 92%;
+      }
     }
 
     &SizeM {
       position: absolute;
-      width: 64.399%;
-      height: 64.399%;
+      width: 77%;
+      height: 77%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $bp-lg) {
+        width: 78.815%;
+        height: 78.815%;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        width: 78%;
+        height: 78%;
+      }
     }
 
     &SizeS {
       position: absolute;
-      width: 53.035%;
-      height: 53.035%; 
+      width: 63%;
+      height: 63%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $bp-lg) {
+        width: 66%;
+        height: 66%;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        width: 64%;
+        height: 64%;
+      }
     }
 
     &Shadow {
       position: absolute;
-      width: 75%; // 75 64 53
-      height: 75%;
+      width: 90%; // 90 75 60
+      height: 90%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -85,15 +142,30 @@
       background: rgba(115, 105, 99, 0.50);
       filter: blur(13.591408729553223px);
 
+      @media screen and (max-width: $bp-lg) {
+        width: 64%; // 91 87 64
+        height: 64%;
+      }
+      
+      @media screen and (max-width: $bp-sm) {
+        width: 45%; // 85 70 45
+        height: 45%;
+      }
+
     }
 
     &Pizza {
       position: absolute;
-      width: 78%; // 78 67 55
-      height: 78%;
+      width: 95%; // 95 80 67
+      height: 95%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $bp-lg) {
+        width: 67%; // 95 80 67
+        height: 67%;
+      }
     }
 
 
@@ -104,16 +176,33 @@
     flex-direction: column;
     align-items: center;
 
+    @media screen and (max-width: $bp-sm) {
+      align-items: flex-start;
+    }
+
     &Name {
       @include h4-desktop;
       margin-bottom: 6px;
       text-align: center;
+
+      @media screen and (max-width: $bp-lg) {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
     }
 
     &Text {
       @include desc-desktop;
       text-align: center;
       margin-bottom: 8px;
+      // height: 15%;
+      // overflow: hidden;
+
+      @media screen and (max-width: $bp-sm) {
+        // height: auto;
+        // overflow: visible;
+        text-align: start;
+      }
     }
 
     &P {
@@ -149,6 +238,10 @@
         line-height: 18px;
         cursor: pointer;
 
+        @media screen and (max-width: $bp-sm) {
+          width: 52px;
+        }
+
         &.active {
           background: #fff;
           color: #000
@@ -169,6 +262,14 @@
       font-weight: 700;
       line-height: 30px;
       margin-bottom: 12px;
+
+      @media screen and (max-width: $bp-lg) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        display: none;
+      }
     }
 
     &BuyBtn {
@@ -192,9 +293,14 @@
       letter-spacing: 1px;
       text-transform: uppercase;
 
-      // @media screen and (max-width: $bp-sm) {
-      //   width: 288px;
-      // }
+      @media screen and (max-width: $bp-lg) {
+        padding: 9px 0;
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        display: none;
+      }
 
       &:after {
         content: '';
@@ -209,7 +315,7 @@
         transition: $transition;
         z-index: -1;
       }
-      
+
       &:active:after {
         background: #BF221E;
       }
@@ -222,6 +328,31 @@
         border: 3px solid #8FC9FF;
         background: #E52D2D;
         transition: none;
+      }
+    }
+
+    &BuyBtnModile {
+      display: none;
+      padding: 4px 21px;
+      background: #E52D2D;
+      color: #FFF;
+      text-align: center;
+      font-size: 16px;
+      font-family: $font-roboto;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      border-radius: 5px;
+      background: #E52D2D;
+      border: none;
+      transition: $transition;
+      
+      &:active {
+        background: #BF221E;
+      }
+
+      @media screen and (max-width: $bp-sm) {
+        display: inline-block;
       }
     }
 

@@ -7,6 +7,14 @@
   gap: 32px 32px;
   margin-bottom: 100px;
   
+  @media screen and (max-width: $bp-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media screen and (max-width: $bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   @media screen and (max-width: $bp-sm) {
     grid-template-columns: 1fr;
   }
