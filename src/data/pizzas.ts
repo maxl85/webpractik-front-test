@@ -4,7 +4,7 @@ export const pizzas = [
     name: 'Итальянская',
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 699,
-    type: ['all', 'vegetarian'],
+    type: ['all', 'vegetarian', 'cheese'],
     image: '/assets/images/pizzas/01.png',
   },
   {
@@ -20,7 +20,7 @@ export const pizzas = [
     name: 'Барбекю',
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
-    type: ['all', 'meat'],
+    type: ['all', 'meat', 'hot'],
     image: '/assets/images/pizzas/03.png',
   },
   {
@@ -84,7 +84,7 @@ export const pizzas = [
     name: 'Пепперони Фреш',
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
-    type: ['all', 'hot'],
+    type: ['all', 'cheese', 'hot', 'meat'],
     image: '/assets/images/pizzas/11.png',
   },
   {

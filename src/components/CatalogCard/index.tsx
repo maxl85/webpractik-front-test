@@ -22,22 +22,28 @@ export default function CatalogCard(props: Props) {
   return (
     <div className={styles.card}>
 
+      <div className={styles.cardType}>
+        {props.type.map((item, index) => 
+            item !=='all' && <Image key={index} className={styles.cardTypeIcon} src={`/assets/icons/type/${item}.svg`} width={0} height={0} alt="icon" />
+        )}
+      </div>
+
       <div className={styles.cardImage}>
         <div className={styles.cardImageSizeL}>
-          <Image src="/assets/icons/size.svg" fill={true} alt="Icon" />
+          <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
         </div>
         <div className={styles.cardImageSizeM}>
-          <Image src="/assets/icons/size.svg" fill={true} alt="Icon" />
+          <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
         </div>
         <div className={styles.cardImageSizeS}>
-          <Image src="/assets/icons/size.svg" fill={true} alt="Icon" />
+          <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
         </div>
         <div className={styles.cardImageShadow}></div>
         <div className={styles.cardImagePizza}>
-          <Image src={props.image} fill={true} alt="" />
+          <Image src={props.image} sizes="(max-width: 768px) 100vw" fill={true} alt="" />
         </div>
       </div>
-      
+
       <div className={styles.cardDesc}>
         <h4 className={styles.cardDescName}>{props.name}</h4>
         <p className={styles.cardDescText}>{props.description}</p>
@@ -50,7 +56,7 @@ export default function CatalogCard(props: Props) {
         <p className={styles.cardDescPrice}>{`от ${props.price} руб.`}</p>
         <button className={styles.cardDescBuyBtn}>Заказать</button>
       </div>
-      
+
     </div>
   );
 }

@@ -15,7 +15,7 @@ export default function Instagram() {
       <div className={styles.instGrid}>
         {imgLink.map((item) => (
           <Link href="#" className={styles.instGridImage} key={item}>
-            <Image src={item} fill={true} style={{ objectFit: "contain" }} alt='instagram' />
+            <Image src={item} fill={true} sizes="(max-width: 768px) 100vw" style={{ objectFit: "contain" }} alt='instagram' />
           </Link>
         ))}
       </div>

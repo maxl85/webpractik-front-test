@@ -2,7 +2,7 @@
 @import 'mixins';
 
 .card {
-  // position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   // align-items: center;
@@ -13,6 +13,30 @@
   &:hover {
     .cardDescName {
       color: #E52D2D;
+    }
+    
+    .cardType {
+      opacity: 1;
+    }
+  }
+  
+  &Type {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 7.899%;
+    height: auto;
+    opacity: 0;
+    transition: $transition;
+    
+    
+    
+    &Icon{
+      width: 100%;
+      height: auto;
+      color: #C5CBD1;
     }
   }
 
