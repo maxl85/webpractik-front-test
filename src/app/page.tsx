@@ -9,9 +9,9 @@ import Promo from '@/components/Promo';
 export default function Home() {
   return (
     <>
-      {/* <Cover /> */}
-      {/* <Promo /> */}
-      {/* <Carousel /> */}
+      <Cover />
+      <Promo />
+      <Carousel />
       <Catalog />
       <Delivery />
       <About />

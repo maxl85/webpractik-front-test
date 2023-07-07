@@ -8,8 +8,12 @@ const getHash = (source, length) =>
   createHash('shake256', { outputLength: length }).update(source).digest('base64url');
 
 const nextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+  
   sassOptions: {
     style: 'compressed',
+    
     includePaths: [path.join(__dirname, 'src/styles')],
   },
 

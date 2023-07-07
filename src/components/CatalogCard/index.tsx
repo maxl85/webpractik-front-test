@@ -4,10 +4,6 @@ import { clsx } from 'clsx';
 
 import styles from './styles.module.scss';
 
-import sizeL from '../../../public/assets/icons/size-L.svg';
-import sizeM from '../../../public/assets/icons/size-M.svg';
-import sizeS from '../../../public/assets/icons/size-S.svg';
-
 interface Props {
   // id: string;
   name: string;
@@ -27,7 +23,7 @@ export default function CatalogCard(props: Props) {
             item !=='all' && <Image key={index} className={styles.cardTypeIcon} src={`/assets/icons/type/${item}.svg`} width={0} height={0} alt="icon" />
         )}
       </div>
-
+      
       <div className={styles.cardImage}>
         <div className={styles.cardImageSizeL}>
           <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
@@ -43,8 +39,6 @@ export default function CatalogCard(props: Props) {
         <div className={styles.cardImagePizza}>
           <Image src={props.image} sizes="(max-width: 768px) 100vw" style={{objectFit: 'contain'}} fill={true} alt="" />
         </div>
-        
-        
       </div>
 
       <div className={styles.cardDesc}>
