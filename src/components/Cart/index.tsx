@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import { IoClose } from 'react-icons/io5';
 import { BiSolidPlusCircle, BiSolidMinusCircle } from 'react-icons/bi';
 import Image from 'next/image';
@@ -48,7 +49,7 @@ export default function Cart() {
             <div className={styles.cartItemCount}>
               <button className={styles.cartItemCountBtn}><BiSolidMinusCircle /></button>
               <input className={styles.cartItemCountInput} value={2} disabled></input>
-              <button className={styles.cartItemCountBtn}><BiSolidPlusCircle /></button>
+              <button disabled className={styles.cartItemCountBtn}><BiSolidPlusCircle /></button>
             </div>
 
             <p className={styles.cartItemPrice}>{699 + ' руб'}</p>

@@ -17,7 +17,7 @@ export default function Home() {
       <Delivery />
       <About />
       <Instagram />
-      {/* <Cart /> */}
+      <Cart />
     </>
   );
 }

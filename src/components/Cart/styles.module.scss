@@ -55,6 +55,10 @@
     font-size: 35px;
     background: #FFF;
     cursor: pointer;
+    
+    &:hover {
+      color: #E52D2D;
+    }
   }
 
   &List {
@@ -179,6 +183,18 @@
         svg path {
           fill: #C5CBD5;
         }
+        
+        &:disabled {
+          svg path {
+            fill: #EEF0F3;
+          }
+        }
+        
+        &:enabled:active {
+          svg path {
+            fill: #E52D2D;
+          }
+        }
       }
 
       &Input {
@@ -221,6 +237,10 @@
       color: #A9A9A9;
       background: #FFF;
       cursor: pointer;
+      
+      &:hover {
+        color: #E52D2D;
+      }
     }
   }
 
@@ -286,6 +306,7 @@
         font-size: 16px;
         color: #000;
         transition: $transition;
+        z-index: 1;
 
         &:hover {
           border-color: #000;
