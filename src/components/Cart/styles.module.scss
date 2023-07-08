@@ -1,0 +1,162 @@
+@import 'variables';
+@import 'mixins';
+
+.cart {
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+
+
+  &.open {
+    display: block;
+  }
+
+  &Bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background: #000;
+  }
+
+  &Modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 704px;
+    width: 100%;
+    height: 90%;
+    padding: 32px 32px 40px;
+    overflow: auto;
+    border-radius: 5px;
+    background: #FFF;
+  }
+
+  &Title {
+    @include h3-desktop;
+    margin-bottom: 24px;
+  }
+
+  &CloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    font-size: 35px;
+    background: #FFF;
+    cursor: pointer;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #DCDFE2;
+    margin-bottom: 23px;
+  }
+
+  &Item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 8px;
+    border-top: 1px solid #DCDFE2;
+
+    &Image {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    &Pizza {
+      width: 30%;
+      // display: flex;
+      // flex-direction: column;
+
+      &Name {
+        color: #000;
+        font-size: 18px;
+        font-family: $font-alegreya;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+      }
+
+      &Size {
+        color: #000;
+        font-size: 12px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+
+    &Count {
+      display: flex;
+      align-items: center;
+
+      &Btn {
+        border: none;
+        padding: 0;
+        font-size: 28px;
+        line-height: 1px;
+        color: #A9A9A9;
+        background: #FFF;
+        cursor: pointer;
+
+        svg path {
+          fill: #C5CBD5;
+        }
+      }
+
+      &Input {
+        margin: 0 7px;
+        padding: 11px;
+        max-width: 60px;
+        border-radius: 4px;
+        border: 1px solid #C4C7CA;
+        background: #FFF;
+
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-family: $font-roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+
+    &Price {
+      @include h4-desktop;
+      margin-right: 32px;
+      margin-left: auto;
+    }
+
+    &DelBtn {
+      position: absolute;
+      top: 8px;
+      right: 0px;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      font-size: 17px;
+      color: #A9A9A9;
+      background: #FFF;
+      cursor: pointer;
+    }
+  }
+}

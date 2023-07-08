@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { clsx } from 'clsx';
 import { useInView } from 'react-intersection-observer';
 
 import styles from './styles.module.scss';
-import HeaderBurger from "../HeaderBurger";
-import HeaderMenu from "../HeaderMenu";
+import HeaderBurger from '../HeaderBurger';
+import HeaderMenu from '../HeaderMenu';
 
 export default function Header() {
   const { ref, inView } = useInView({ threshold: 1 });

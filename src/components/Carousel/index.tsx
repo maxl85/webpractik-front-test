@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
