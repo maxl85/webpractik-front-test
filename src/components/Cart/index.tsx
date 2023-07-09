@@ -7,10 +7,9 @@ import { IoClose } from 'react-icons/io5';
 import { BiSolidPlusCircle, BiSolidMinusCircle } from 'react-icons/bi';
 import { useSelector, useDispatch } from 'react-redux';
 
+import styles from './styles.module.scss';
 import { showCart } from '@/redux/cart/cartSlice';
 import { selectCartVisible } from '@/redux/cart/selectors';
-
-import styles from './styles.module.scss';
 
 
 interface CartForm {
