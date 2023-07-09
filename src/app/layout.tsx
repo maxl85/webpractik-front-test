@@ -4,6 +4,7 @@ import { Alegreya } from 'next/font/google';
 import { Roboto } from 'next/font/google';
 import { Metadata } from 'next';
 
+import { Providers } from "@/redux/provider";
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
@@ -34,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${alegreya.variable} ${roboto.variable}`}>
       <body>
+        <Providers>
           <Header />
           {children}
           <Footer />
+        </Providers>
       </body>
     </html>
   );

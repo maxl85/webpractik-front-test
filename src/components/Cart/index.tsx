@@ -5,6 +5,10 @@ import Image from 'next/image';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { IoClose } from 'react-icons/io5';
 import { BiSolidPlusCircle, BiSolidMinusCircle } from 'react-icons/bi';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { showCart } from '@/redux/cart/cartSlice';
+import { selectCartVisible } from '@/redux/cart/selectors';
 
 import styles from './styles.module.scss';
 
@@ -20,19 +24,19 @@ export default function Cart() {
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<CartForm> = (data) => console.log(data);
+  const cartVisible = useSelector(selectCartVisible);
+  const dispatch = useDispatch();
 
-  console.log(errors);
-  console.log(getValues('name'));
+  const onSubmit: SubmitHandler<CartForm> = (data) => console.log(data);
 
 
   return (
-    <div className={styles.cart}>
-      <div className={styles.cartBg}></div>
+    <div className={clsx(styles.cart, cartVisible && styles.visible)}>
+      <div className={styles.cartBg} onClick={() => dispatch(showCart(false))}></div>
 
       <div className={styles.cartModal}>
         <h3 className={styles.cartTitle}>Ваш заказ</h3>
-        <button className={styles.cartCloseBtn}><IoClose /></button>
+        <button className={styles.cartCloseBtn} onClick={() => dispatch(showCart(false))}><IoClose /></button>
 
         <ul className={styles.cartList}>
           <li className={styles.cartItem}>

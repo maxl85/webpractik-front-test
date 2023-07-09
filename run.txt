@@ -1,11 +1,13 @@
 npx create-next-app@latest
 npm i sass -D
 npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
-npm i normalize.css
+// npm i normalize.css
+npm i modern-normalize
 npm i react-intersection-observer
 npm i clsx
 npm install react-icons --save
 npm install react-hook-form
+npm install @reduxjs/toolkit react-redux
 
 
 TODO

@@ -5,20 +5,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { clsx } from 'clsx';
 import { useInView } from 'react-intersection-observer';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './styles.module.scss';
 import HeaderBurger from '../HeaderBurger';
 import HeaderMenu from '../HeaderMenu';
+import { showCart } from '@/redux/cart/cartSlice';
+import { selectCartVisible } from '@/redux/cart/selectors';
 
 export default function Header() {
   const { ref, inView } = useInView({ threshold: 1 });
   const [menuToggle, setMenuToggle] = useState(false);
 
-
-
+  const cartVisible = useSelector(selectCartVisible);
+  const dispatch = useDispatch();
+  
   return (
     <header className={clsx(styles.header, !inView && styles.isScroll)} ref={ref}>
-
       <div className={`container ${styles.wrapper}`}>
         <Link href="/" className={clsx(styles.logo, menuToggle && styles.logoHide)}>
           <Image src="/assets/icons/logo.svg" fill={true} alt="logo" />
@@ -36,7 +39,7 @@ export default function Header() {
           </div>
         </a>
 
-        <a href="#" className={styles.cart}>
+        <div className={styles.cart} onClick={() => dispatch(showCart(!cartVisible))}>
           <div className={styles.cartIcon}>
             <div className={styles.cartWrapImage}>
               <Image src="/assets/icons/cart.svg" fill={true} alt="logo" />
@@ -47,7 +50,7 @@ export default function Header() {
             <h4>ваш заказ</h4>
             <span>Итальянская и ещё 2 пиццы</span>
           </div>
-        </a>
+        </div>
 
         <Link href="#" className={styles.language}><span>EN</span></Link>
 

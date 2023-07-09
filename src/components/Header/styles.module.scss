@@ -112,6 +112,7 @@
 .cart {
   display: flex;
   align-items: flex-end;
+  cursor: pointer;
 
   @media screen and (max-width: $bp-lg) {
     margin-left: 32px;
