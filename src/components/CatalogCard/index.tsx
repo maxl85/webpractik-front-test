@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 import { clsx } from 'clsx';
@@ -7,19 +5,9 @@ import { clsx } from 'clsx';
 import styles from './styles.module.scss';
 import { Pizza } from '../../redux/pizzas/types';
 
-// interface Props {
-//   id: number;
-//   name: string;
-//   description: string;
-//   price: number;
-//   type: string[];
-//   sizes: number[];
-//   activeSize: number;
-//   image: string;
-//   onClickSize: (props: {pizzaId: number ,activeSize: number}) => void;
-// }
+
 interface Props extends Pizza {
-  onClickSize: (props: {pizzaId: number ,activeSize: number}) => void;
+  onClickSize: (props: { pizzaId: number, activeSize: number }) => void;
 }
 
 export default function CatalogCard(props: Props) {
@@ -40,12 +28,12 @@ export default function CatalogCard(props: Props) {
         <div className={styles.cardImageSizeM}>
           <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
         </div>
-        <div className={styles.cardImageSizeS}>
-          <Image src="/assets/icons/size.svg" fill={true} alt="icon" />
-        </div>
-        <div className={styles.cardImageShadow}></div>
-
-        <div className={styles.cardImagePizza}>
+        
+        <div className={clsx(
+          styles.cardImagePizza,
+          props.activeSize == 2 && styles.sizeL,
+          props.activeSize == 1 && styles.sizeM,
+          props.activeSize == 0 && styles.sizeS)}>
           <Image src={props.image} sizes="(max-width: 768px) 100vw" style={{ objectFit: 'contain' }} fill={true} alt="" />
         </div>
       </div>
@@ -58,7 +46,7 @@ export default function CatalogCard(props: Props) {
           {props.sizes.map((size, i) => (
             <button
               className={clsx(styles.cardDescSizesBtn, props.activeSize == i && styles.active)}
-              onClick={() => props.onClickSize({pizzaId: props.id, activeSize: i})}
+              onClick={() => props.onClickSize({ pizzaId: props.id, activeSize: i })}
               key={i}>
               {size}
             </button>
