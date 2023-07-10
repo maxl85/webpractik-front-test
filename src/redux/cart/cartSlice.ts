@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CartState } from './types';
 
-export interface CartState {
-  visible: boolean;
-}
 
 const initialState: CartState = {
   visible: false,

@@ -5,6 +5,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 699,
     type: ['all', 'vegetarian', 'cheese'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/01.png',
   },
   {
@@ -13,6 +15,8 @@ export const pizzas = [
     description: 'Тесто со шпинатом, молодой сыр и колбаски, много колбасок',
     price: 479,
     type: ['all', 'meat'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/02.png',
   },
   {
@@ -21,6 +25,8 @@ export const pizzas = [
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
     type: ['all', 'meat', 'hot'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/03.png',
   },
   {
@@ -29,6 +35,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 399,
     type: ['all', 'vegetarian'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/04.png',
   },
   {
@@ -37,6 +45,8 @@ export const pizzas = [
     description: 'Тесто со шпинатом, молодой сыр и колбаски, много колбасок',
     price: 699,
     type: ['all', 'meat'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/05.png',
   },
   {
@@ -45,6 +55,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 479,
     type: ['all', 'vegetarian'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/06.png',
   },
   {
@@ -53,6 +65,8 @@ export const pizzas = [
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
     type: ['all', 'meat'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/07.png',
   },
   {
@@ -61,6 +75,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 399,
     type: ['all', 'vegetarian'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/08.png',
   },
   {
@@ -69,6 +85,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 699,
     type: ['all', 'cheese'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/09.png',
   },
   {
@@ -77,6 +95,8 @@ export const pizzas = [
     description: 'Тесто со шпинатом, молодой сыр и колбаски, много колбасок',
     price: 479,
     type: ['all', 'cheese'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/01.png',
   },
   {
@@ -85,6 +105,8 @@ export const pizzas = [
     description: 'Циплёнок (маленький кура), оливки, моцарелла, соус барбекю',
     price: 699,
     type: ['all', 'cheese', 'hot', 'meat'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/11.png',
   },
   {
@@ -93,6 +115,8 @@ export const pizzas = [
     description: 'Томат, шампиньон, сыр, оливки, чили, соус, тесто, базилик',
     price: 699,
     type: ['all', 'cheese', 'meat'],
+    sizes: [20, 30, 40],
+    activeSize: 0,
     image: '/assets/images/pizzas/12.png',
   },
 ];

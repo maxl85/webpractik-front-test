@@ -1,8 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { FilterState } from './types';
 
-export interface FilterState {
-  categoryId: number;
-}
 
 const initialState: FilterState = {
   categoryId: 0,
