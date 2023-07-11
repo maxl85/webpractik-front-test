@@ -8,8 +8,9 @@ import { BiSolidPlusCircle, BiSolidMinusCircle } from 'react-icons/bi';
 import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './styles.module.scss';
-import { showCart } from '@/redux/cart/cartSlice';
-import { selectCartVisible } from '@/redux/cart/selectors';
+import { showCart, removeItem, incCount, decCount } from '@/redux/cart/cartSlice';
+import { selectCartVisible, selectCart } from '@/redux/cart/selectors';
+import SizeIcon from '../../../public/assets/icons/size.svg';
 
 
 interface CartForm {
@@ -24,6 +25,7 @@ export default function Cart() {
   });
 
   const cartVisible = useSelector(selectCartVisible);
+  const { items, totalPrice } = useSelector(selectCart);
   const dispatch = useDispatch();
 
   const onSubmit: SubmitHandler<CartForm> = (data) => console.log(data);
@@ -38,100 +40,64 @@ export default function Cart() {
         <button className={styles.cartCloseBtn} onClick={() => dispatch(showCart(false))}><IoClose /></button>
 
         <ul className={styles.cartList}>
-          <li className={styles.cartItem}>
+          {items.map((item, i) => (
+            <li className={styles.cartItem} key={i}>
+              <div className={styles.cartItemImage}>
+                <div className={styles.cartItemImageWrapIcon} >
+                  {item.type.map((value, i) => (
+                    <div className={styles.cartItemImageIcon} key={i}>
+                      <Image src={`/assets/icons/type/${value}.svg`} fill={true} alt="icon" />
+                    </div>
+                  ))}
+                </div>
 
-            <div className={styles.cartItemImage}>
-              <div className={styles.cartItemImageIcon}>
-                <Image src={`/assets/icons/type/${'meat'}.svg`} fill={true} alt="icon" />
+                <SizeIcon className={styles.cartItemImageSizeL} />
+                <SizeIcon className={styles.cartItemImageSizeM} />
+
+                <div className={clsx(
+                  styles.cartItemImagePizza,
+                  item.activeSize == 2 && styles.sizeL,
+                  item.activeSize == 1 && styles.sizeM,
+                  item.activeSize == 0 && styles.sizeS,
+                )}>
+                  <Image src={item.image} fill={true} alt="pizza" />
+                </div>
               </div>
-              <div className={styles.cartItemImageSizeL}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" />
-                </svg>
+
+              <div className={styles.cartItemPizza}>
+                <p className={styles.cartItemPizzaName}>{item.name}</p>
+                <p className={styles.cartItemPizzaSize}>{`${item.size} см`}</p>
               </div>
-              <div className={styles.cartItemImageSizeM}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" />
-                </svg>
+
+              <div className={styles.cartItemCount}>
+                <button
+                  className={styles.cartItemCountBtn}
+                  onClick={() => dispatch(decCount(item))}
+                  disabled={item.count === 1}>
+                  <BiSolidMinusCircle />
+                </button>
+                <input className={styles.cartItemCountInput} value={item.count} disabled></input>
+                <button
+                  className={styles.cartItemCountBtn}
+                  onClick={() => dispatch(incCount(item))}>
+                  <BiSolidPlusCircle />
+                </button>
               </div>
-              <div className={styles.cartItemImageSizeS}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" />
-                </svg>
-              </div>
-              <div className={styles.cartItemImagePizza}>
-                <Image src="/assets/images/pizzas/01.png" fill={true} alt="pizza" />
-              </div>
-            </div>
 
-            <div className={styles.cartItemPizza}>
-              <p className={styles.cartItemPizzaName}>Итальянская</p>
-              <p className={styles.cartItemPizzaSize}>30 см</p>
-            </div>
+              <p className={styles.cartItemPrice}>{`${item.price * item.count} руб`}</p>
 
-            <div className={styles.cartItemCount}>
-              <button className={styles.cartItemCountBtn}><BiSolidMinusCircle /></button>
-              <input className={styles.cartItemCountInput} value={2} disabled></input>
-              <button disabled className={styles.cartItemCountBtn}><BiSolidPlusCircle /></button>
-            </div>
-
-            <p className={styles.cartItemPrice}>{699 + ' руб'}</p>
-
-            <button className={styles.cartItemDelBtn}><IoClose /></button>
-
-          </li>
-
-          {/* ============================================================================= */}
-          <li className={styles.cartItem}>
-
-            <div className={styles.cartItemImage}>
-              <div className={styles.cartItemImageIcon}>
-                <Image src={`/assets/icons/type/${'meat'}.svg`} fill={true} alt="icon" />
-              </div>
-              <div className={styles.cartItemImageSizeL}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" strokeDasharray="2" />
-                </svg>
-              </div>
-              <div className={styles.cartItemImageSizeM}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" strokeDasharray="2" />
-                </svg>
-              </div>
-              <div className={styles.cartItemImageSizeS}>
-                <svg viewBox="0 0 202 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="101" cy="101" r="100" stroke="#DCDFE2" strokeDasharray="2" />
-                </svg>
-              </div>
-              <div className={styles.cartItemImagePizza}>
-                <Image src="/assets/images/pizzas/01.png" fill={true} alt="pizza" />
-              </div>
-            </div>
-
-            <div className={styles.cartItemPizza}>
-              <p className={styles.cartItemPizzaName}>Итальянская</p>
-              <p className={styles.cartItemPizzaSize}>30 см</p>
-            </div>
-
-            <div className={styles.cartItemCount}>
-              <button className={styles.cartItemCountBtn}><BiSolidMinusCircle /></button>
-              <input className={styles.cartItemCountInput} value={2} disabled></input>
-              <button className={styles.cartItemCountBtn}><BiSolidPlusCircle /></button>
-            </div>
-
-            <p className={styles.cartItemPrice}>{699 + ' руб'}</p>
-
-            <button className={styles.cartItemDelBtn}><IoClose /></button>
-
-          </li>
-
-          {/* ============================================================================= */}
-
+              <button
+                className={styles.cartItemDelBtn}
+                onClick={() => dispatch(removeItem(item))}>
+                <IoClose />
+              </button>
+            </li>
+          ))}
         </ul>
 
         <div className={styles.cartTotal}>
           <span className={styles.cartTotalText}>Сумма заказа :</span>
-          <span className={styles.cartTotalSum}>{'1 887' + ' руб'}</span>
+          <span className={styles.cartTotalSum}>{`${totalPrice} руб`}</span>
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

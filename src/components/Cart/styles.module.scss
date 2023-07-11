@@ -11,7 +11,7 @@
   z-index: 20;
   transition: $transition;
   opacity: 0;
-  
+
   &.visible {
     opacity: 1;
     display: block;
@@ -85,10 +85,17 @@
       margin-right: 4px;
       // border: 1px solid black;
 
-      &Icon {
+      &WrapIcon {
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        top: 4px;
-        left: 4px;
+        top: 0px;
+        left: -4px;
+
+      }
+
+      &Icon {
+        position: relative;
         width: 12px;
         height: 12px;
       }
@@ -101,8 +108,8 @@
         width: 83px;
         height: 83px;
 
-        svg circle {
-          stroke-width: 2;
+        circle {
+          stroke-width: 3;
           stroke-dasharray: 10;
         }
       }
@@ -112,24 +119,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
+        width: 68px;
+        height: 68px;
 
-        svg circle {
-          stroke-width: 2;
-          stroke-dasharray: 15;
-        }
-      }
-
-      &SizeS {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 55px;
-        height: 55px;
-
-        svg circle {
+        circle {
           stroke-width: 3;
           stroke-dasharray: 15;
         }
@@ -140,13 +133,29 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
+        // width: 68px;
+        // height: 68px;
+
+        &.sizeL {
+          width: 83px;
+          height: 83px;
+        }
+
+        &.sizeM {
+          width: 68px;
+          height: 68px;
+        }
+
+        &.sizeS {
+          width: 55px;
+          height: 55px;
+        }
       }
     }
 
     &Pizza {
       margin-right: auto;
+      width: 136px;
       // display: flex;
       // flex-direction: column;
 
@@ -221,9 +230,12 @@
       @include h4-desktop;
       margin-right: 32px;
       margin-left: auto;
+      width: 97px;
 
       @media screen and (max-width: $bp-sm) {
         margin-right: 0;
+        font-size: 18px;
+        text-align: end;
       }
     }
 
@@ -260,6 +272,10 @@
       line-height: normal;
       margin-right: 20px;
       margin-bottom: 5px;
+
+      @media screen and (max-width: $bp-sm) {
+        margin-bottom: 0px;
+      }
     }
 
     &Sum {
@@ -270,6 +286,10 @@
       font-style: normal;
       font-weight: 800;
       line-height: normal;
+
+      @media screen and (max-width: $bp-sm) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -282,11 +302,22 @@
       font-weight: 800;
       line-height: normal;
       margin-bottom: 14px;
+
+      @media screen and (max-width: $bp-sm) {
+        margin-top: 24px;
+      }
     }
 
     &TwoInputs {
       display: flex;
       margin-bottom: 24px;
+
+      @media screen and (max-width: $bp-sm) {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+
     }
 
     &Wrap {
@@ -296,7 +327,7 @@
       &:nth-child(1) {
         margin-right: 32px;
       }
-      
+
       &.good {
         label {
           top: 0;

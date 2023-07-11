@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { clsx } from 'clsx';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { addItem } from '@/redux/cart/cartSlice';
+import { selectCart } from '@/redux/cart/selectors';
+import { CartItem } from '@/redux/cart/types';
 import styles from './styles.module.scss';
 import { Pizza } from '../../redux/pizzas/types';
 
@@ -11,6 +15,21 @@ interface Props extends Pizza {
 }
 
 export default function CatalogCard(props: Props) {
+  const dispatch = useDispatch();
+  
+  const handleClickBuy = () => {
+    const item: CartItem = {
+      id: props.id,
+      name: props.name,
+      image: props.image,
+      type: props.type.filter(value => value !== 'all'),
+      size: props.sizes[props.activeSize],
+      activeSize: props.activeSize,
+      price:  props.price[props.activeSize],
+      count: 1,
+    };
+    dispatch(addItem(item));
+  };
 
   return (
     <div className={styles.card}>
@@ -54,7 +73,7 @@ export default function CatalogCard(props: Props) {
         </div>
         <p className={styles.cardDescPrice}>{`${props.price[props.activeSize]} руб.`}</p>
         
-        <button className={styles.cardDescBuyBtn}>Заказать</button>
+        <button className={styles.cardDescBuyBtn} onClick={handleClickBuy}>Заказать</button>
         <button className={styles.cardDescBuyBtnMobile}>{`${props.price[props.activeSize]} руб.`}</button>
       </div>
 

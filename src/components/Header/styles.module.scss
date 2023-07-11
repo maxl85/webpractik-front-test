@@ -190,6 +190,8 @@
 
     &>span {
       @include desc-desktop;
+      height: 18px;
+      width: 160px;
     }
   }
 }

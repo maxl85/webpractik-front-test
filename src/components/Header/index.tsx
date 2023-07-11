@@ -7,19 +7,29 @@ import { clsx } from 'clsx';
 import { useInView } from 'react-intersection-observer';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { showCart, } from '@/redux/cart/cartSlice';
+import { selectCartVisible, selectCart } from '@/redux/cart/selectors';
 import styles from './styles.module.scss';
 import HeaderBurger from '../HeaderBurger';
 import HeaderMenu from '../HeaderMenu';
-import { showCart } from '@/redux/cart/cartSlice';
-import { selectCartVisible } from '@/redux/cart/selectors';
 
 export default function Header() {
   const { ref, inView } = useInView({ threshold: 1 });
   const [menuToggle, setMenuToggle] = useState(false);
 
   const cartVisible = useSelector(selectCartVisible);
+  const { items: cartItem } = useSelector(selectCart);
   const dispatch = useDispatch();
+
+  function countPizzaz() {
+    let total = 0;
+    cartItem.map(item => {
+      total += item.count;
+    });
+    return total;
+  }
   
+
   return (
     <header className={clsx(styles.header, !inView && styles.isScroll)} ref={ref}>
       <div className={`container ${styles.wrapper}`}>
@@ -44,11 +54,16 @@ export default function Header() {
             <div className={styles.cartWrapImage}>
               <Image src="/assets/icons/cart.svg" fill={true} alt="logo" />
             </div>
-            <span>5</span>
+            <span>{countPizzaz()}</span>
           </div>
           <div className={styles.cartText}>
             <h4>ваш заказ</h4>
-            <span>Итальянская и ещё 2 пиццы</span>
+            <span>
+              {cartItem.length > 0 && countPizzaz() < 2 && cartItem[0].name}
+              {cartItem.length >= 1 && countPizzaz() == 2 && cartItem[0].name + " и еще " + (countPizzaz() - 1) + " пицца"}
+              {cartItem.length >= 1 && (countPizzaz() > 2 && countPizzaz() < 6) && cartItem[0].name + " и еще " + (countPizzaz() - 1) + " пиццы"}
+              {cartItem.length >= 1 && (countPizzaz() >= 6) && cartItem[0].name + " и еще " + (countPizzaz() - 1) + " пицц"}
+            </span>
           </div>
         </div>
 
