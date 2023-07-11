@@ -74,7 +74,7 @@ export default function CatalogCard(props: Props) {
         <p className={styles.cardDescPrice}>{`${props.price[props.activeSize]} руб.`}</p>
         
         <button className={styles.cardDescBuyBtn} onClick={handleClickBuy}>Заказать</button>
-        <button className={styles.cardDescBuyBtnMobile}>{`${props.price[props.activeSize]} руб.`}</button>
+        <button className={styles.cardDescBuyBtnMobile} onClick={handleClickBuy}>{`${props.price[props.activeSize]} руб.`}</button>
       </div>
 
     </div>
