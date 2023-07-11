@@ -52,9 +52,10 @@ export default function CatalogCard(props: Props) {
             </button>
           ))}
         </div>
-        <p className={styles.cardDescPrice}>{`от ${props.price} руб.`}</p>
+        <p className={styles.cardDescPrice}>{`${props.price[props.activeSize]} руб.`}</p>
+        
         <button className={styles.cardDescBuyBtn}>Заказать</button>
-        <button className={styles.cardDescBuyBtnMobile}>{`от ${props.price} руб.`}</button>
+        <button className={styles.cardDescBuyBtnMobile}>{`${props.price[props.activeSize]} руб.`}</button>
       </div>
 
     </div>

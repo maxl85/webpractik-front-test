@@ -2,7 +2,7 @@ export interface Pizza {
   id: number;
   name: string;
   description: string;
-  price: number;
+  price: number[];
   type: string[];
   sizes: number[],
   activeSize: number,

@@ -74,7 +74,7 @@ export default function Catalog() {
         </ul>
         
         <div className={styles.catalogGrid}>
-          {pizzas.map((item) => (
+          {pizzas.filter(pizza => pizza.type.indexOf(categories[categoryId].type)!= -1).map((item) => (
             <CatalogCard onClickSize={handleClickSize} {...item} key={item.id} />
           ))}
         </div>
