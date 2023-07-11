@@ -17,9 +17,6 @@ import MeatIcon from '../../../public/assets/icons/type/meat.svg';
 import VeganIcon from '../../../public/assets/icons/type/vegetarian.svg';
 
 
-// import { pizzas } from '../../data/pizzas';
-
-
 const categories = [
   {
     name: 'Все',
@@ -53,8 +50,8 @@ export default function Catalog() {
   const categoryId = useSelector(selectCategoryId);
   const pizzas = useSelector(selectPizzaz);
   const dispatch = useDispatch();
-  
-  const handleClickSize = (props: {pizzaId: number ,activeSize: number}) => {
+
+  const handleClickSize = (props: { pizzaId: number, activeSize: number }) => {
     dispatch(setActiveSize(props));
   };
 
@@ -62,7 +59,7 @@ export default function Catalog() {
     <div className="container">
       <section className={styles.catalog}>
         <h2 className={styles.catalogTitle}>Выберите пиццу</h2>
-        
+
         <ul className={styles.catalogCategory}>
           {categories.map((category, i) => (
             <li className={clsx(styles.catalogCategoryItem, categoryId == i && styles.active)}
@@ -72,9 +69,9 @@ export default function Catalog() {
             </li>
           ))}
         </ul>
-        
+
         <div className={styles.catalogGrid}>
-          {pizzas.filter(pizza => pizza.type.indexOf(categories[categoryId].type)!= -1).map((item) => (
+          {pizzas.filter(pizza => pizza.type.indexOf(categories[categoryId].type) != -1).map((item) => (
             <CatalogCard onClickSize={handleClickSize} {...item} key={item.id} />
           ))}
         </div>

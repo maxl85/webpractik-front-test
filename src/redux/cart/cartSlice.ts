@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartState } from './types';
+import { CartItem, CartState } from './types';
 
 
 const initialState: CartState = {
   visible: false,
+  items: [],
+  totalPrice: 0,
 };
 
 export const cart = createSlice({
@@ -13,6 +15,22 @@ export const cart = createSlice({
     showCart: (state, action: PayloadAction<boolean>) => {
       state.visible = action.payload;
     },
+    addItem: (state, action: PayloadAction<CartItem>) => {
+      const findItem = state.items.find(item => item.id === action.payload.id );
+      
+      if (findItem) {
+        findItem.count++;
+      }
+      else {
+        state.items.push({
+          ...action.payload,
+          count: 1,
+        });
+      }
+    },
+    
+    
+    
   },
 });
 
