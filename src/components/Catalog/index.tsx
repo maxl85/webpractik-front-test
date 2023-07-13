@@ -1,7 +1,6 @@
 "use client";
 
 import { clsx } from 'clsx';
-import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setCategoryId } from '@/redux/filter/filterSlice';

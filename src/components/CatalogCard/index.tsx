@@ -1,10 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
 import { clsx } from 'clsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { addItem } from '@/redux/cart/cartSlice';
-import { selectCart } from '@/redux/cart/selectors';
 import { CartItem } from '@/redux/cart/types';
 import styles from './styles.module.scss';
 import { Pizza } from '../../redux/pizzas/types';
